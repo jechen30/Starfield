@@ -2,7 +2,7 @@ Particle[] bee;
 void setup()
 {
   size(500,530);
-  bee= new Particle[8];
+  bee= new Particle[15];
   for (int i=0;i<bee.length;i++)
   {
     bee[i]= new NormalParticle();
@@ -66,11 +66,11 @@ class NormalParticle implements Particle
     myX=260;
     myY=350;
     myAngle= Math.random()*2*Math.PI;
-    mySpeed= Math.random()*3;
+    mySpeed= Math.random()*5;
   }
   void fly()
   {
-    myX=myX+(Math.cos(myAngle)*mySpeed);
+    myX=myX-(Math.cos(myAngle)*mySpeed);
     myAngle=myAngle+.01;
     myY=myY+(Math.sin(myAngle)*mySpeed);
   }
@@ -150,7 +150,7 @@ class JumboParticle implements Particle//uses inheritance
   }
   void fly()
   {
-    myX=myX+(Math.cos(myAngle)*mySpeed);
+    myX=myX-(Math.cos(myAngle)*mySpeed);
     myAngle=myAngle+.01;
     myY=myY+(Math.sin(myAngle)*mySpeed);
   }
